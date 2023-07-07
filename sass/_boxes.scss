@@ -1,0 +1,49 @@
+@mixin flexBox($ff: row nowrap, $jc: center, $ai: center) {
+  display: flex;
+  flex-flow: $ff;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin btn(
+  $bg-clr: transparent,
+  $brdr-clr: $light,
+  $brdrr: 0.2em,
+  $hover-bg: $light,
+  $clr: $light,
+  $hover-clr: $dark,
+  $p: 0.5em 1em,
+  $fsz: 1.2em
+) {
+  @include flexBox;
+  gap: 1em;
+  padding: $p;
+  font-size: $fsz;
+  font-weight: 700;
+  color: $clr;
+  background-color: $bg-clr;
+  border-radius: $brdrr;
+  border: 2px solid $brdr-clr;
+  text-transform: uppercase;
+  transition: all 1s;
+  user-select: none;
+
+  &:hover {
+    transition: all 0.2s;
+    background-color: $hover-bg;
+    color: $hover-clr;
+  }
+
+  &:active {
+    background-color: red;
+    color: $light;
+  }
+}
+
+@mixin glass($blur: 0.3em, $bg: $acrylic-light) {
+  background-color: $bg;
+  backdrop-filter: blur($blur);
+  border-top: 1px solid $acrylic-light;
+  border-right: 1px solid $acrylic-light;
+  border-radius: 1em;
+}

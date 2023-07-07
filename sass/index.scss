@@ -1,0 +1,221 @@
+@import 'boxes', 'reset';
+
+p,
+span {
+  font-family: $sec-font;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.header {
+  width: 100%;
+  height: 4em;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark;
+  color: $light;
+  padding: 0 2em;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  border-bottom: 0.15em solid $acrylic-light;
+
+  &__logo {
+    width: 100%;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: $accent;
+    font-weight: 400;
+  }
+
+  &__nav {
+    width: 100%;
+    height: 100%;
+    @include flexBox;
+  }
+
+  &__btn {
+    display: none;
+  }
+
+  &__menu {
+    width: 100%;
+    height: 100%;
+    @include flexBox;
+  }
+
+  &__item {
+    padding: 0 1em;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 500;
+  }
+
+  &__span {
+    font-size: 0.9em;
+    font-weight: 300;
+  }
+}
+
+.main {
+  background-color: $dark;
+  width: 100%;
+  @include flexBox($ff: column nowrap);
+  color: $light;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  min-height: 40em;
+  @include flexBox;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: $acrylic-dark;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  img {
+    position: absolute;
+    background-color: gray;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+}
+
+.wrapper {
+  @include flexBox($ff: column nowrap);
+  width: 100%;
+  max-width: 35em;
+  height: 100%;
+  z-index: 2;
+  color: $light;
+  gap: 2em;
+}
+
+.intro {
+  &__headings {
+    @include flexBox($ff: column nowrap);
+    width: 100%;
+    border-top: 0.3em solid $accent;
+    border-bottom: 0.3em solid $accent;
+    padding: 1.5em 0;
+  }
+
+  &__h1 {
+    font-size: 4em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &__h2 {
+    font-size: 1.3em;
+    font-family: $sec-font;
+  }
+}
+
+.intro__list,
+.footer__list {
+  @include flexBox($ff: column nowrap);
+  gap: 0.3em;
+  font-family: $sec-font;
+}
+
+.btn {
+  @include btn;
+}
+
+.welcome,
+.contact,
+.footer {
+  &__headings {
+    border-top: 0.15em solid $accent;
+    width: 20%;
+    @include flexBox;
+    text-align: center;
+    padding: 1em 0 0;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &__wrapper {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: $acrylic-dark;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+  }
+
+  &__headings {
+    z-index: 2;
+    border-top: 0.15em solid $accent;
+    border-bottom: 0.15em solid $accent;
+    width: 20%;
+    @include flexBox;
+    text-align: center;
+    padding: 1em 0;
+  }
+}
+
+.contact {
+  &__h2 {
+    white-space: nowrap;
+  }
+
+  &__form {
+    @include flexBox($ff: column nowrap);
+    gap: 1em;
+    width: 100%;
+  }
+
+  &__input {
+    width: 100%;
+    text-align: center;
+    border-bottom: 0.01em solid $accent;
+    padding: 0.3em 1em;
+    font-family: $sec-font;
+  }
+
+  textarea {
+    height: 8em;
+  }
+}
+
+.footer {
+  &__social {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+
+  &__legal {
+    color: $accent;
+    font-weight: 600;
+  }
+}
