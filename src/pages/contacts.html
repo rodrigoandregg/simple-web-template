@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacts | SimpleWeb</title>
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+  <header class="header">
+    <a href="../../index.html" class="header__logo">SimpleWeb</a>
+    <nav class="header__nav">
+      <button class="header__btn">Menu</button>
+      <ul class="header__menu">
+        <li class="header__item">
+          <a href="../../index.html" class="header__link">Home</a>
+        </li>
+        <li class="header__item">
+          <a href="../pages/about.html" class="header__link">About Us</a>
+        </li>
+        <li class="header__item">
+          <a href="../pages/news.html" class="header__link">News</a>
+        </li>
+        <li class="header__item">
+          <a href="../pages/gallery.html" class="header__link">Gallery</a>
+        </li>
+        <li class="header__item">
+          <a href="../pages/contacts.html" class="header__link">Contacts</a>
+        </li>
+      </ul>
+    </nav>
+    <span class="header__span">Tel: 555-123-654</span>
+  </header>
+  <main class="main">
+    <section class="map container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.5102008708714!2d-72.3786063249522!3d41.27599930289855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e62236cd7ce5af%3A0x4b3cffceb8774d7!2sMaple%20Ave%2C%20Old%20Saybrook%2C%20CT%2006475%2C%20EE.%20UU.!5e0!3m2!1ses!2scl!4v1690409736080!5m2!1ses!2scl"
+        width="600" height="650" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <section class="contact container">
+      <div class="contact__wrapper wrapper">
+        <div class="contact__headings headings">
+          <h2 class="contact__h2">Feedback</h2>
+        </div>
+        <form class="contact__form">
+          <input placeholder="Name &ast;" type="text" name="name" id="name" class="contact__input">
+          <input placeholder="Email &ast;" type="email" name="mail" id="mail" class="contact__input">
+          <input placeholder="Phone" type="text" name="phone" id="phone" class="contact__input">
+          <textarea placeholder="Message &ast;" name="message" id="msg" class="contact__input textarea"></textarea>
+          <button type="submit" class="contact__btn btn">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="footer container">
+    <img src="../images/contacts.jpg" alt="image" class="footer__img">
+    <div class="footer__wrapper wrapper">
+      <div class="footer__headings headings">
+        <h2 class="footer__h2">Contacts</h2>
+      </div>
+      <ul class="footer__list">
+        <li class="footer__item">42 Maple Avenue, Unit 100</li>
+        <li class="footer__item">Tel: 555-9876-5432; 555-9876-5433</li>
+        <li class="footer__item">Open daily from 8:00 am to 8:00 pm</li>
+      </ul>
+      <div class="footer__social">
+        <a href="#" class="footer__link btn">Facebook</a>
+        <a href="#" class="footer__link btn">Twitter</a>
+      </div>
+      <span class="footer__copy">© 2023 <a href="#" class="footer__legal">Privacy Policy</a></span>
+    </div>
+  </footer>
+</body>
+
+</html>

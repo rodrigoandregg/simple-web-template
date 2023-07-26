@@ -125,6 +125,14 @@ h2 {
   text-transform: uppercase;
 }
 
+h3 {
+  font-size: 1.3em;
+}
+
+iframe {
+  z-index: 1;
+}
+
 .header {
   width: 100%;
   height: 4em;
@@ -172,6 +180,14 @@ h2 {
   font-size: 0.8em;
   font-weight: 500;
 }
+.header__link {
+  color: #ffffff;
+  transition: color 1s ease;
+}
+.header__link:hover {
+  color: #eead31;
+  transition: color 0.2s;
+}
 .header__span {
   font-size: 0.9em;
   font-weight: 300;
@@ -208,7 +224,9 @@ h2 {
   right: 0;
   left: 0;
 }
-.container img {
+
+.container > img,
+.wrapper > img {
   position: absolute;
   background-color: gray;
   height: 100%;
@@ -227,6 +245,18 @@ h2 {
   z-index: 2;
   color: #ffffff;
   gap: 2em;
+}
+
+.headings {
+  border-top: 0.15em solid #eead31;
+  width: 20%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1em 0 0;
+  white-space: nowrap;
 }
 
 .intro__headings {
@@ -250,6 +280,7 @@ h2 {
 }
 
 .intro__list,
+.about__list,
 .footer__list {
   display: flex;
   flex-flow: column nowrap;
@@ -257,6 +288,7 @@ h2 {
   align-items: center;
   gap: 0.3em;
   font-family: "Raleway", sans-serif;
+  text-align: center;
 }
 
 .btn {
@@ -286,25 +318,14 @@ h2 {
   color: #ffffff;
 }
 
-.welcome__headings,
-.contact__headings,
-.footer__headings {
-  border-top: 0.15em solid #eead31;
-  width: 20%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1em 0 0;
-}
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 .gallery__wrapper {
   position: relative;
+  overflow: hidden;
+  transition: all 1s;
 }
 .gallery__wrapper::before {
   content: "";
@@ -315,6 +336,15 @@ h2 {
   bottom: 0;
   right: 0;
   left: 0;
+}
+.gallery__wrapper:hover {
+  transition: all 0.2s;
+  color: #eead31;
+}
+.gallery__wrapper:hover .gallery__img {
+  transition: all 0.2s;
+  transform: scale(1);
+  filter: brightness(1.2);
 }
 .gallery__headings {
   z-index: 2;
@@ -327,6 +357,10 @@ h2 {
   align-items: center;
   text-align: center;
   padding: 1em 0;
+}
+.gallery__img {
+  transform: scale(1.1);
+  transition: all 1s;
 }
 
 .contact__h2 {
@@ -346,9 +380,115 @@ h2 {
   border-bottom: 0.01em solid #eead31;
   padding: 0.3em 1em;
   font-family: "Raleway", sans-serif;
+  outline: none;
 }
 .contact textarea {
   height: 8em;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 2em;
+  align-items: start;
+  justify-content: center;
+}
+
+.mate {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+.mate__picture {
+  width: 100%;
+  height: 12em;
+  overflow: hidden;
+  position: relative;
+}
+.mate__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mate__info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.mate__span {
+  font-size: 0.9em;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+
+.service {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1em;
+}
+.service__number {
+  border: 0.15em solid #ffffff;
+  height: 3em;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.news__list {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+.news__item {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1em;
+}
+.news__picture {
+  width: 100%;
+  height: 12em;
+  overflow: hidden;
+}
+.news__img {
+  background-color: gray;
+  height: 100%;
+  object-fit: cover;
+}
+
+.add__list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8em;
+  text-align: center;
+}
+
+.offers__item {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.offers__span {
+  text-align: start;
 }
 
 .footer__social {
